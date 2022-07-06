@@ -3,9 +3,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     domain_name = var.regional_domain_name
     origin_id   = "si3mshady"
 
-    # s3_origin_config {
-    #   origin_access_identity = "origin-access-identity/cloudfront/ABCDEFG1234567"
-    # }
+
   }
 
   enabled             = true
@@ -35,7 +33,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   restrictions {
     geo_restriction {
       restriction_type = "whitelist"
-      locations        = ["US", "CA", "GB", "DE"]
+      locations        = ["US"]
     }
   }
 

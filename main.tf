@@ -35,3 +35,18 @@ module "cloudfront" {
   bucket_name = local.bucket_name
   regional_domain_name = module.s3_site.regional_domain_name
 }
+
+
+output "s3_metadata" {
+  value  = module.s3_site.s3_metadata.website_endpoint
+}
+
+output "cdn" {
+
+    value = module.cloudfront.cdn_metadata.domain_name
+  
+}
+
+
+
+
