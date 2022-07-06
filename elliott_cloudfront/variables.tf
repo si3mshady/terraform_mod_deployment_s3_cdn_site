@@ -1,0 +1,3 @@
+variable "website_endpoint" {
+  
+}
