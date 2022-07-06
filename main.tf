@@ -29,7 +29,9 @@ module "s3_site" {
 }
 
 module "cloudfront" {
+
   source = "./elliott_cloudfront"
   website_endpoint = module.s3_site.website_endpoint
-#   s3_bucket = module.s3_site
+  bucket_name = local.bucket_name
+  regional_domain_name = module.s3_site.regional_domain_name
 }
